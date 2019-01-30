@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <!-- Evita inyección de codigo -->
+    <%= parrafo %>
+
+    <!-- Permite inyeccion de codigo sqli -->
+    <%- parrafo %>
+
+
+
+    <% if (condicion.estado) { %>
+      <p> segundo par <%= condicion.segundo %></p>
+    <% } else { %>
+      <p> segundo impar <%= condicion.segundo %></p>
+    <% } %>
+
+
+    <h3>Lista nombres</h3>
+    <% users.forEach(function(user) { %>
+      <p> <%= user.name %> </p>
+    <% }) %>
+
+  </body>
+</html>
